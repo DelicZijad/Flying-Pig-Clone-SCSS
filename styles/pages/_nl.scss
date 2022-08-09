@@ -1,0 +1,59 @@
+@use '../global/global' as g;
+
+.nlHeader{
+    padding: 18%;
+    color: white;
+    background: url(images/location.jpg) no-repeat center/cover;
+    text-transform: uppercase;
+        color: white;
+        position: relative;
+        z-index: 1;
+    
+        * {
+            z-index: 2;
+        }
+    
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            z-index: -1;
+        }
+    
+        &__big {
+            @include g.tablet {
+                font-size: 2.5rem;
+            }
+    
+            @include g.desktop {
+                font-size: 3rem;
+            }
+        }
+}
+
+.nlSection {
+    &__signUp{
+        display: flex;
+        flex-direction: column;
+    }
+   input{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid g.$txtCol2;
+   }
+   label{
+    font-size: 14px;
+    color: g.$txtCol2;
+   }
+   &__title2{
+    text-transform: uppercase;
+   }
+   &__title{
+    text-transform: uppercase;
+   }
+}

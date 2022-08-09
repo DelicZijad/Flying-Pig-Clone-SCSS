@@ -1,0 +1,78 @@
+@use '../global/global' as g;
+
+
+.resHeader{
+    background: url(images/reservations.jpg) no-repeat center/cover;
+    padding: 15%;
+    color: white;
+    position: relative;
+    z-index: 1;
+    
+        * {
+            z-index: 2;
+        }
+    
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            z-index: -1;
+        }
+                  &__big {
+                      @include g.tablet {
+                          font-size: 2.5rem;
+                      }
+        
+                      @include g.desktop {
+                          font-size: 3rem;
+                      }
+                  }
+}
+
+.reservationSec{
+    color: g.$txtCol1;
+    &__links{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        @include g.tablet{
+            flex-direction: row;
+        }
+    }
+    &__hosting{
+        background-color: rgb(245, 245, 245);
+        .title{
+            text-transform: uppercase;
+        }
+        .links{
+            @include g.gridEven(1);
+            gap: 3rem;
+            justify-items: center;
+            width: max-content;
+            margin-inline: auto;
+            @include g.tablet{
+                @include g.gridEven(2);
+                gap: 4rem;
+            }
+            @include g.desktop{
+                @include g.gridEven(2);
+                gap: 6rem;
+            }
+        }
+        .btn{
+            width: max-content;
+            border: 1px solid g.$txtCol1;
+            text-transform: uppercase;
+            transition: all 250ms;
+            border-radius: 3px;
+            &:hover{
+                background-color: #000000;
+                color: white;
+            }
+        }
+    }
+}

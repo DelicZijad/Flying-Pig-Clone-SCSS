@@ -1,0 +1,192 @@
+@use '../global/' as g;
+.homeHeader{
+    background: url(images/homeHeader.jpg) no-repeat center center/cover;
+    color: white;
+    &__container{
+        padding-block:3rem 8rem;
+        display: grid;
+        place-items: center;
+        @include g.desktop{
+            height: 100vh;
+        }
+    }
+    &__link{
+        text-transform: uppercase;
+        border: 1px solid white;
+        font-size: 12px;
+        font-weight: 600;
+        transition: all 250ms;
+        @include g.desktop{
+            font-size: 1rem;
+            padding: 2rem
+        }
+        &:hover{
+            background-color: black;
+        }
+    }
+    &__links{
+        @include g.gridEven(1);
+        gap: 2rem;
+        @include g.desktop{
+            @include g.gridEven(2);
+            gap: 3rem;
+        }
+    }
+  
+}
+
+.about{
+    &__container{
+        @include g.gridEven(1);
+        gap: 2rem;
+        @include g.tablet {
+                @include g.gridEven(2);
+            }
+    }
+    &__content{
+        @include g.gridEven(1);
+        gap: 1rem;
+        align-content: center;
+        @include g.desktop{
+            gap: 1.5rem;
+        }
+      *{
+        @include g.tablet{
+            text-align: left;
+        }
+      }
+    }
+&__link{
+    color: g.$linkCol;
+    text-transform: uppercase;
+    transition: all 250ms;
+    font-weight: 600;
+    &:hover{
+    text-decoration: underline;
+    }
+}
+&__heading{
+    text-transform: uppercase;
+    color: g.$txtCol1;
+}
+&__para{
+    color: g.$txtCol2;
+    font-weight: 300;
+}
+&__image{
+    height: 100%;
+    img{
+        height: 100%;
+    }
+}
+}
+
+
+.menu{
+    color: white;
+    min-height: 600px;
+    display: grid;
+    place-content: center;
+    background:rgba(0,0,0,0.5) url(images/homeThree.jpg) no-repeat center/cover;
+   
+    &__heading{
+        text-transform: uppercase;
+        @include g.tablet{
+            font-size: 3rem;
+        }
+    }
+    &__link{
+        text-transform: uppercase;
+        border: 1px solid white;
+        width: max-content;
+        margin-inline: auto;
+        transition: all 250ms;
+        &:hover{
+            background-color: white;
+            color: g.$txtCol2;
+        }
+    }
+}
+
+.row1{
+    &__container{
+        @include g.gridEven(1);
+        gap: 3rem;
+        @include g.tablet{
+            @include g.gridEven(3)
+        }
+    }
+    &__heading{
+        text-transform: uppercase;
+    }
+
+    &__link{
+        text-transform: uppercase;
+        color: g.$linkCol;
+        font-weight: 600;
+    }
+    &__para{
+        font-weight: 300;
+        color: g.$txtCol1;
+    }
+}
+
+.row2{
+    &__container {
+            @include g.gridEven(1);
+            gap: 3rem;
+    
+            @include g.tablet {
+                @include g.gridEven(2)
+            }
+            @include g.desktop {
+                @include g.gridEven(4)
+            }
+        }
+    &__title{
+        color: g.$primaryBlack;
+        border-bottom: 2px solid g.$primaryBlack;
+        text-transform: uppercase;
+        margin-inline: auto;
+        width: max-content;
+
+    }
+ &__date{
+    color: g.$txtCol2;
+    text-transform: uppercase;
+    
+ }
+ &__location{
+    text-transform:uppercase;
+    font-size: 1rem;
+    color: g.$txtCol1;
+    font-weight: 700;
+    line-height: 1.5;
+ }
+ &__para{
+    font-weight: 400;
+    color: g.$txtCol2;
+ }
+}
+
+.fly{
+    background: url(images/homeTwelve.jpg) no-repeat center/cover;
+    height: 300px;
+    color: white;
+    text-transform: uppercase;
+    .container{
+display: grid;
+    place-content: center;
+    height: 100%!important;
+    }
+    &__line{
+        height: 2px;
+        width: 100%;
+        background-color: white;
+    }
+    &__lines{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

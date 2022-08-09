@@ -1,0 +1,64 @@
+@use '../global/global' as g;
+
+.delHeader{
+    background: url(images/deliveryHeader.jpeg) no-repeat center/cover;
+    padding: 18%;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    z-index: 1;
+    *{
+        z-index: 2;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top:0;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        z-index: -1;
+    }
+    &__big{
+        @include g.tablet{
+            font-size: 2.5rem;
+        }
+        @include g.desktop{
+            font-size: 3rem;
+        }
+    }
+}
+
+.delSection{
+    &__desc{
+        color: g.$txtCol1;
+    }
+    &__grid{
+        @include g.gridEven(1);
+        gap: 3rem;
+        @include g.tablet{
+            @include g.gridEven(2);
+        }
+    }
+    &__btn{
+        width: max-content;
+        border: 1px solid g.$txtCol2;
+        margin-inline: auto;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transition: all 300ms;
+        @include g.tablet {
+               padding: 1.7rem 2.5rem;
+               font-size: 1.25rem;
+            }
+        @include g.desktop {
+               padding: 2rem 3rem;
+               font-size: 1.5rem;
+            }
+            &:hover{
+                background-color: #000000;
+                color: white;
+            }
+    }
+}

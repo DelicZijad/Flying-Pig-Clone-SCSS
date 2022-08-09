@@ -1,0 +1,83 @@
+@use 'sass:math';
+
+$sizes:8,12,16,20,24,28,32,36,40,48,44,52;
+$fonts:8,12,14,18,20,24,28,30,32,36,40,44,48,50,52,60,66,72;
+@each $size in $sizes{
+    .m{
+        $calculation:math.div($size,16)+rem;
+
+        &t#{$size}{
+            margin-top: $calculation;
+        }
+        &b#{$size}{
+            margin-bottom: $calculation;
+        }
+        &l#{$size}{
+            margin-left: $calculation;
+        }
+        &r#{$size}{
+            margin-right: $calculation;
+        }
+        &y#{$size}{
+            margin-block: $calculation;
+        }
+        &x#{$size}{
+            margin-inline: $calculation;
+        }
+    }
+    .p{
+        $calculation: math.div($size, 16)+rem;
+        &#{$size}{
+            padding: $calculation;
+        }
+        &t#{$size}{
+            padding-top: $calculation;
+        }
+        &b#{$size}{
+            padding-bottom: $calculation;
+        }
+        &l#{$size}{
+            padding-left: $calculation;
+        }
+        &r#{$size}{
+            padding-right: $calculation;
+        }
+        &y#{$size}{
+            padding-block: $calculation;
+        }
+        &x#{$size}{
+            padding-inline: $calculation;
+        }
+    }
+}
+@each $font in $fonts{
+    $calculation: math.div($font, 16)+rem;
+    .font#{$font}{
+        font-size: $calculation;
+    }
+}
+$weights:1,2,3,4,5,6,7,8,9;
+@each $weight in $weights {
+    $calculation:$weight*100;
+    .weight#{$weight}{
+        font-weight: $calculation;
+    }
+}
+.txt{
+    &Ctr{
+        text-align: center;
+    }
+    &Right{
+        text-align: right;
+    }
+    &Left{
+        text-align:left;
+    }
+}
+
+$heights:6,7,8,9,10,11,12,13,14,15,16,17,18,19;
+@each $height in $heights {
+    .lh#{$height}{
+        line-height: math.div($height,10);
+    }
+}

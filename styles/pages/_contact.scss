@@ -1,0 +1,70 @@
+@use "../global/global" as g;
+
+.contactHeader{
+    background: url(images/homeSix.jpg) no-repeat center/cover;
+    color: white;
+    text-transform: uppercase;
+    padding: 15%;
+    &__titleSmall{
+        @include g.desktop{
+            font-size: 20px;
+        }
+    }
+    &__title{
+        @include g.tablet{
+            font-size: 3.5rem;
+        }
+        @include g.desktop{
+            font-size: 4rem;
+        }
+    }
+}
+
+.main{
+    padding-block: 4rem;
+    &__grid{
+        @include g.gridEven(1);
+        gap: 2rem;
+        @include g.tablet{
+            @include g.gridEven(2)
+        }
+        &__city{
+            font-size:28px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        &__hours{
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.touch{
+    color: g.$txtCol3;
+    &__heading {
+            text-transform: uppercase;
+            color: g.$txtCol1;
+            @include g.tablet{
+                font-size: 2.5rem;
+            }
+            @include g.desktop{
+                font-size: 3rem;
+            }
+        }
+    &__form {
+border-bottom: 1px solid g.$txtCol3;
+    *{
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border:1px solid g.$txtCol3;
+        border-bottom: none;
+    }
+   input:last-child{
+    background-color: transparent;
+    font-weight: 700;
+   }
+
+}
+}

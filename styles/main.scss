@@ -1,0 +1,183 @@
+@use 'global' ;
+@use 'global/global' as g;
+@use 'pages' as p;
+
+body {
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+}
+.mainHeading{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    @include g.tablet{
+        font-size: 3rem;
+    }
+    @include g.desktop{
+        font-size: 4rem;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
+img {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+.content{
+    @include g.desktop{
+        display: flex;
+    }
+}
+.nav{
+   background-color: rgb(227, 227, 227);
+   color: g.$linkCol;
+   display: grid;
+   place-items: center;
+position: sticky;
+top: 0;
+z-index: 100;
+@media (max-height:400px){
+    position: static;
+}
+ @include g.desktop {
+            height: 100vh;
+            width:25%;
+        }
+   &__logo{
+    height: 100px;
+    width: 50%;
+    @include g.desktop {
+            height: 65%!important;
+            width: 70%  !important;
+            margin-top:3rem!important;
+        }
+        @include g.tablet{
+            width: 30%;
+        }
+
+     img{
+        height: 100%;
+    }
+   }
+
+&__links{
+@include g.gridEven(2);
+@include g.tablet{
+@include g.gridEven(4);
+}
+@include g.desktop{
+    @include g.gridEven(1);
+}
+}
+&__link{
+    text-transform: uppercase;
+    padding-block: 0.5rem;
+    text-align: center;
+    transition: all 300ms;
+    &:hover{
+            color: g.$primaryBlack;
+        }
+    @include g.desktop {
+        padding: 0.5rem;
+        }
+       
+}
+&__social{
+display: none;
+@include g.desktop{
+    display: flex;
+        gap: 1rem;
+}
+
+}
+&__icon {
+    transition: all 300ms;
+cursor: pointer;
+    &:hover {
+        color: g.$primaryBlack;
+    }
+}
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.footer{
+    background-color: g.$primaryBlack;
+    color: g.$txtCol2;
+    &__heading{
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #fff;
+    }
+    &__main{
+        @include g.gridEven(1);
+        gap: 4rem;
+        @include g.tablet{
+            @include g.gridEven(2);
+        }
+        @include g.desktop{
+            @include g.gridEven(4);
+        }
+    }
+  .bold{
+    color: g.$txtCol3;
+  }
+  &__link{
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: g.$txtCol3;
+    font-weight: 500;
+    line-height: 1;
+    &:hover {
+            color: white;
+        }
+  }
+&__bottom{
+    background-color: g.$secondaryBlack;
+}
+  &__social{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  &__icon {
+      transition: all 300ms;
+      cursor: pointer;
+
+      &:hover {
+          color:white;
+      }
+  }
+  *{
+    @include g.tablet{
+        text-align: left;
+    }
+  }
+  &__copy{
+    text-align: center;
+  }
+  
+}

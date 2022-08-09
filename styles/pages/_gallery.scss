@@ -1,0 +1,53 @@
+@use '../global/global' as g;
+
+
+.galHeader{
+padding: 20%;
+background: url(images/galleryHeader.jpg) no-repeat center/cover;
+color: white;
+&__title{
+    text-transform: uppercase;
+    @include g.tablet{
+        font-size: 2.5rem;
+    }
+    @include g.desktop{
+        font-size: 3rem;
+    }
+}
+}
+
+.galSection{
+    &__title{
+        text-transform: uppercase;
+
+    }
+    &__sep{
+        height: 7px ;
+        border-block: 1px solid g.$txtCol3;
+    }
+    &__grid{
+       @include g.gridEven(1);
+       gap: 2rem; 
+       @include g.tablet{
+       @include g.gridEven(2);
+      
+       }
+       @include g.desktop{
+       @include g.gridEven(3);
+       
+       }
+       
+    }
+    img{
+        height: 100%;
+    }
+    &__img{
+        height:300px;
+        @include g.tablet{
+            height: 350px;
+        }
+        @include g.desktop{
+            height: 265px;
+        }
+    }
+}

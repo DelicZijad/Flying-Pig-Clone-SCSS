@@ -1,0 +1,28 @@
+$linkCol:#656565;
+$txtCol1:#333333;
+$txtCol2:#777777;
+$txtCol3:#A0A0A0;
+$primaryBlack:#232323;
+$secondaryBlack:#1A1A1A;
+
+@mixin tablet{
+    @media (min-width:768px){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width:1024px){
+        @content;
+    }
+}
+@mixin gridEven($number){
+    display: grid;
+    grid-template-columns: repeat($number,1fr);
+}
+
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}

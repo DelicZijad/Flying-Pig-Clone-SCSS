@@ -1,0 +1,56 @@
+@use '../global/global' as g;
+
+.aboutHeader{
+    background: url(images/aboutHeader.jpg) no-repeat center/cover;
+    color: white;
+    padding: 15%;
+    text-transform: uppercase;
+    &__title1{
+        font-weight: 400;
+        @include g.desktop{
+            font-size: 24px;
+        }
+    }
+    &__title2{
+        @include g.desktop{
+            font-size: 3rem;
+        }
+    }
+}
+
+.section{
+    &__container{
+        @include g.gridEven(1);
+        gap: 3rem;
+        align-items: center;
+        @include g.tablet{
+            @include g.gridEven(2);
+            
+              }
+        
+    }
+     &__txt{
+        padding-block: 2rem;
+        color: g.$txtCol2;
+     }
+     &__img img{
+height: 100%;
+     }
+     .reverse{
+       grid-column: 1;
+       grid-row: 1;
+     }
+     &__para{
+        @include g.tablet{
+            font-size: 1rem;
+            color: g.$txtCol2;
+        }
+     }
+     &__heading{
+        text-transform: uppercase;
+     }
+}
+
+.alignTop{
+    align-items: flex-start!important;
+}
